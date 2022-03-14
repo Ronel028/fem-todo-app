@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root{
+      --veryDarkDBlue: hsl(235, 24%, 19%); 
+     --veryDarkGrayishBlue1: hsl(233, 14%, 35%); 
+     --veryDarkGrayishBlue2: hsl(237, 14%, 26%); 
+     --lightGrayishBlue: hsl(234, 39%, 85%); 
+     --lightGrayishBlueHover: hsl(236, 33%, 92%); 
+     --darkGrayishBlue: hsl(234, 39%, 85%); 
+     --veryDarkBlue: hsl(235, 21%, 11%);
+
+     /* image */ 
+     --bgImageDesktop: url("/images/bg-desktop-dark.jpg");
+     --bgImageMobile: url("/images/bg-mobile-dark.jpg");
+
+
+    
+   
+}
+
+.lightMode{
+    --veryDarkDBlue: hsl(0, 0%, 98%);
+    --veryDarkGrayishBlue1: hsl(236, 33%, 92%);
+    --veryDarkGrayishBlue2: hsl(233, 11%, 84%);
+    --darkGrayishBlue: hsl(234, 11%, 52%);
+    --lightGrayishBlueHover: hsl(235, 19%, 35%);
+    --veryDarkBlue: hsl(236, 33%, 92%);
+
+    /* image */
+    --bgImageDesktop: url("/images/bg-desktop-light.jpg");
+    --bgImageMobile: url("/images/bg-mobile-light.jpg");
+}
+
+main .firstbg{
+    background-image: var(--bgImageDesktop);
+}
+
+@media screen and (max-width: 500px){
+    main .firstbg{
+        background-image: var(--bgImageMobile)
+    }  
+}
+    
+.lightMode{
+    background-image: url("/images/bg-desktop-light.jpg")!important;
+}
+@media screen and (max-width: 500px){
+    .lightMode{
+        background-image: url("/images/bg-mobile-light.jpg")!important;
+    }
+}
+/* #borderGradient:hover{
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1
+} */
+
+input[type="checkbox"]{
+    display: none;
+}
+label::before{
+   content: '';
+   background: url(../images/icon-check.svg), linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   padding: 5px;
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   position: absolute;
+   left: -47px;
+
+   transform: scale(0) rotateZ(180deg);
+   transition: all 0.4s cubic-bezier(0.54, 0.1, 0, 1.49);
+}
+
+input[type="checkbox"]:checked + label::before{
+    transform: scale(1) rotateZ(0deg);
+}
+
+label::after{
+    content: "";
+    border: 1px solid var(--veryDarkGrayishBlue1);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: absolute;
+    left: -49px;
+}
+
+.VDDB, .ifActive{
+    background-color: var(--veryDarkDBlue);
+    color: var(--darkGrayishBlue);
+}
+.circleborder{
+    border-color: var(--veryDarkGrayishBlue1);
+}
+.borderlist{
+    border-color: var(--veryDarkGrayishBlue2);
+}
+label{
+    color: var(--darkGrayishBlue);
+}
+p.tColor{
+    color: var(--darkGrayishBlue);
+}
+p.hv:hover{
+    color: var(--lightGrayishBlueHover);
+}
+#secondBg{
+    background-color: var(--veryDarkBlue);
+}
+
+ul::-webkit-scrollbar{
+    width: 1vw;
+}
+ul::-webkit-scrollbar-thumb{
+    background-color: var(--veryDarkGrayishBlue2);
+}
+ul::-webkit-scrollbar-track{
+    background-color: var(--veryDarkDBlue);
+}
+
+.listHide{
+    display: none;
+}

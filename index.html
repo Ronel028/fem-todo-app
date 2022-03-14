@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- link css -->
+  <link rel="stylesheet" href="/dist/output.css">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+<!-- bg-VeryDarkBlue -->
+   <main class="w-[100%] h-auto relative top-0 left-0 bottom-0  tablet:h-auto">
+       <div class="bg-container w-full h-screen absolute top-0 left-0 bottom-0 -z-10">
+            <div id="gradientBg" class="firstbg w-full h-[40vh] bg-no-repeat bg-cover bg-center"></div>
+            <div id="secondBg" class="secondbg w-full h-[60vh] bg-VeryDarkBlue"></div>
+       </div>
+      
+
+<!-- absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] -->
+    <div class="main-container w-full h-screen flex justify-center items-center relative">
+
+    
+       <div class="content flex flex-col items-center justify-center w-[50%] h-[622px] tablet:w-[70%] tabletmd:w-[80%]">
+
+            <div class="title w-full flex justify-between items-center mb-[45px]">
+                <h1 class="text-[2.0625rem] text-white font-JosefinSans font-bold uppercase tracking-[1.1875rem]">
+                   todo
+                </h1>
+                <div class="toggle cursor-pointer">
+                    <img id="sun" src="/images/icon-sun.svg" alt="" class="">
+                    <img id="moon" src="/images/icon-moon.svg" alt="" class="hidden">
+                </div>
+            </div>
+
+            <div class="container h-[79%] flex flex-col justify-between">
+
+                  <div class="inputfields h-full flex flex-col justify-between">
+
+                      <div class=" h-full ">
+                          <div class="VDDB w-full h-auto px-[23px] py-[18px] rounded-md flex items-center gap-6 mb-[24px]">
+                            <div class="circleborder grayishBlue1 w-[29px] h-[25px] rounded-full border-2"></div>
+                            <input id="myInput" type="text" placeholder="Create a new todo..." class="VDDB LGB w-full text-[1rem] outline-0 font-JosefinSans font-normal">
+                          </div>
+
+                          <div id="output" class="VDDB output-container h-[386px] mobile:h-[304px] flex flex-col justify-between rounded-md shadow-lg">
+                                <ul class="h-[320px]">
+                                     <!-- <li class="borderlist flex justify-between items-center gap-6 border-b-[1px] border-VeryDarkGrayishBlue2 px-[23px] py-[18px]">
+                                          <div class="group">
+                                                <input class="checkBox" type="checkbox">
+                                                    
+                                                <label class="LGB ml-[51px] relative flex-1 text-base font-JosefinSans font-normal text-LightGrayishBlue capitalize cursor-pointer flex items-center justify-between">
+                                                    Coding
+                                                </label>
+                                          </div>
+                                            
+                                          <div class="removeBtn cursor-pointer">
+                                              <img src="./images/icon-cross.svg" alt="">
+                                          </div>                            
+                                      </li> -->
+
+                                   
+                              </ul>
+
+                              <div class="footer px-[23px] flex justify-between place-content-end py-[18px]">
+                                <div class="count-items">
+                                    <p class="tColor text-[14px] font-JosefinSans font-normal">
+                                        <span id="item-count">0</span> items left
+                                    </p>
+                                </div>
+            
+                                <!-- mobile:absolute mobile:w--[80%] mobile:bottom-0 mobile:left-0 mobile:flex mobile:justify-center mobile:bg-VeryDarkDesaturatedBlue mobile:py-[17px] rounded-md -->
+                                <div class="ifActive flex gap-4 mobile:absolute mobile:w-[80%] mobile:bottom-[69px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:flex mobile:justify-center mobile:shadow-lg mobile:py-[17px] rounded-md">
+                                    <p id="selectAll" class="tColor hv text-[14px] font-JosefinSans font-normal cursor-pointer">All</p>
+                                    <p id="selectActive" class="tColor hv text-[14px] font-JosefinSans font-normal cursor-pointer">Active</p>
+                                    <p id="selectCompleted" class="tColor hv text-[14px] font-JosefinSans font-normal cursor-pointer">Completed</p>
+                                </div>
+            
+                                <div class="clear">
+                                    <p class="tColor hv text-[14px] font-JosefinSans font-normal cursor-pointer">Clear Completed</p>
+                                </div>
+                              </div>
+                          </div>
+                          
+                       
+                    
+                      </div>
+
+                     
+                  </div>
+
+        </div>
+            
+       </div>
+    </div>
+   </main>
+
+
+  <!-- Todo
+
+   Add dynamic number items left
+
+  
+   
+  
+
+  
+
+  Drag and drop to reorder list -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="/script/app.js"></script>
+</body>
+</html>
