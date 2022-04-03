@@ -17,7 +17,9 @@
      --bgImageDesktop: url("/images/bg-desktop-dark.jpg");
      --bgImageMobile: url("/images/bg-mobile-dark.jpg");
 
+     --active-color: white;
 
+     --transition: all 200ms ease-in-out;
     
    
 }
@@ -33,10 +35,13 @@
     /* image */
     --bgImageDesktop: url("/images/bg-desktop-light.jpg");
     --bgImageMobile: url("/images/bg-mobile-light.jpg");
+    --active-color: #000;
+
 }
 
 main .firstbg{
     background-image: var(--bgImageDesktop);
+    transition: var(--transition);
 }
 
 @media screen and (max-width: 500px){
@@ -80,6 +85,9 @@ label::before{
 input[type="checkbox"]:checked + label::before{
     transform: scale(1) rotateZ(0deg);
 }
+input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+}
 
 label::after{
     content: "";
@@ -89,29 +97,37 @@ label::after{
     border-radius: 50%;
     position: absolute;
     left: -49px;
+    transition: var(--transition);
 }
 
 .VDDB, .ifActive{
     background-color: var(--veryDarkDBlue);
     color: var(--darkGrayishBlue);
+    transition: var(--transition);
 }
 .circleborder{
     border-color: var(--veryDarkGrayishBlue1);
+    transition: var(--transition);
 }
 .borderlist{
     border-color: var(--veryDarkGrayishBlue2);
+    transition: var(--transition);
 }
 label{
     color: var(--darkGrayishBlue);
+    transition: var(--transition);
 }
 p.tColor{
     color: var(--darkGrayishBlue);
+    transition: var(--transition);
 }
 p.hv:hover{
     color: var(--lightGrayishBlueHover);
+    transition: var(--transition);
 }
 #secondBg{
     background-color: var(--veryDarkBlue);
+    transition: var(--transition);
 }
 
 ul::-webkit-scrollbar{
@@ -119,11 +135,24 @@ ul::-webkit-scrollbar{
 }
 ul::-webkit-scrollbar-thumb{
     background-color: var(--veryDarkGrayishBlue2);
+    transition: var(--transition);
 }
 ul::-webkit-scrollbar-track{
     background-color: var(--veryDarkDBlue);
+    transition: var(--transition);
 }
 
 .listHide{
     display: none;
+}
+
+/* ----------------------------- */
+.activeColor{
+    color: var(--active-color) !important;
+}
+.label-line{
+    text-decoration: line-through !important;
+}
+.completed:active{
+    color: var(--active-color) !important;
 }

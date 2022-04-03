@@ -516,10 +516,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 51px;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -739,10 +735,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-width: 0px;
 }
 
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 :root{
   --veryDarkDBlue: hsl(235, 24%, 19%);
   --veryDarkGrayishBlue1: hsl(233, 14%, 35%);
@@ -754,6 +746,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* image */
   --bgImageDesktop: url("/images/bg-desktop-dark.jpg");
   --bgImageMobile: url("/images/bg-mobile-dark.jpg");
+  --active-color: white;
+  --transition: all 200ms ease-in-out;
 }
 
 .lightMode{
@@ -766,10 +760,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* image */
   --bgImageDesktop: url("/images/bg-desktop-light.jpg");
   --bgImageMobile: url("/images/bg-mobile-light.jpg");
+  --active-color: #000;
 }
 
 main .firstbg{
   background-image: var(--bgImageDesktop);
+  transition: var(--transition);
 }
 
 @media screen and (max-width: 500px){
@@ -816,6 +812,10 @@ input[type="checkbox"]:checked + label::before{
   transform: scale(1) rotateZ(0deg);
 }
 
+input[type="checkbox"]:checked + label{
+  text-decoration: line-through;
+}
+
 label::after{
   content: "";
   border: 1px solid var(--veryDarkGrayishBlue1);
@@ -824,35 +824,43 @@ label::after{
   border-radius: 50%;
   position: absolute;
   left: -49px;
+  transition: var(--transition);
 }
 
 .VDDB, .ifActive{
   background-color: var(--veryDarkDBlue);
   color: var(--darkGrayishBlue);
+  transition: var(--transition);
 }
 
 .circleborder{
   border-color: var(--veryDarkGrayishBlue1);
+  transition: var(--transition);
 }
 
 .borderlist{
   border-color: var(--veryDarkGrayishBlue2);
+  transition: var(--transition);
 }
 
 label{
   color: var(--darkGrayishBlue);
+  transition: var(--transition);
 }
 
 p.tColor{
   color: var(--darkGrayishBlue);
+  transition: var(--transition);
 }
 
 p.hv:hover{
   color: var(--lightGrayishBlueHover);
+  transition: var(--transition);
 }
 
 #secondBg{
   background-color: var(--veryDarkBlue);
+  transition: var(--transition);
 }
 
 ul::-webkit-scrollbar{
@@ -861,14 +869,32 @@ ul::-webkit-scrollbar{
 
 ul::-webkit-scrollbar-thumb{
   background-color: var(--veryDarkGrayishBlue2);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 ul::-webkit-scrollbar-track{
   background-color: var(--veryDarkDBlue);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .listHide{
   display: none;
+}
+
+/* ----------------------------- */
+
+.activeColor{
+  color: var(--active-color) !important;
+}
+
+.label-line{
+  text-decoration: line-through !important;
+}
+
+.completed:active{
+  color: var(--active-color) !important;
 }
 
 @media (max-width: 860px) {
